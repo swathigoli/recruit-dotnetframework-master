@@ -59,7 +59,7 @@ url to run the api is: https://localhost:44334/api/Payment , post request
 
 # Successful scenario test data
 
-Sample Data to above post call ,
+Sample Data to above post call. Pass below request in body
 
 payment request 
 {
@@ -94,3 +94,6 @@ Payment reponse
     "TransactionId": null,
     "ErrorMessage": "Invalid payment request."
 }
+
+![image](https://github.com/swathigoli/recruit-dotnetframework/assets/40425447/3465fa23-ec8c-4a60-a6bc-afdfef5397d9)
+
