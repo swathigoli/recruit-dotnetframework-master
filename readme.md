@@ -44,16 +44,24 @@ Feel free to create a public GitHub repo or private GitHub repo where it's acces
 
 # Assignment results
 Added new payment controller with  ProcessPayment action method.
+
 Processpayment accept PaymentRequest as parameter(paymentrequest is class object which is having CardNumber, cvv,expirydate and amount as entities)
- processpayment returns paymentreponse object(Success,TransactionId,ErrorMessage)
+
+processpayment returns paymentreponse object(Success,TransactionId,ErrorMessage)
+
 Onsuccessful verification, it returns transcationid along with success value as true
+
 onfailed verfication, it returns error message  along with success value as false 
+
 #Url to Run API(when it runs in local)
+
 url to run the api is: https://localhost:44334/api/Payment , post request
 
 # Successful scenario test data
+
 Sample Data to above post call ,
- payment request 
+
+payment request 
 {
 "CardNumber":1234567890123456,
 "ExpiryDate":"1/24" ,
@@ -69,7 +77,9 @@ Payment response:
 }
 
 # Failed scenario test data
+
 Sample Data to above post call(Month is wrong) ,
+
  payment request 
 {
 "CardNumber":1234567890123456,
