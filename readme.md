@@ -42,7 +42,7 @@ You can use any tools, plugins and technologies as required for you to complete 
 # Submitting Assignment
 Feel free to create a public GitHub repo or private GitHub repo where it's accessible to the assessor
 
-#Assignment result
+# Assignment results
 Added new payment controller with  ProcessPayment action method.
 Processpayment accept PaymentRequest as parameter(paymentrequest is class object which is having CardNumber, cvv,expirydate and amount as entities)
  processpayment returns paymentreponse object(Success,TransactionId,ErrorMessage)
@@ -68,7 +68,7 @@ Payment response:
     "ErrorMessage": null
 }
 
-#Failed scenario test data
+# Failed scenario test data
 Sample Data to above post call(Month is wrong) ,
  payment request 
 {
