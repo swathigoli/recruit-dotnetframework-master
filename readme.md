@@ -41,3 +41,46 @@ You can use any tools, plugins and technologies as required for you to complete 
 
 # Submitting Assignment
 Feel free to create a public GitHub repo or private GitHub repo where it's accessible to the assessor
+
+#Assignment result
+Added new payment controller with  ProcessPayment action method.
+Processpayment accept PaymentRequest as parameter(paymentrequest is class object which is having CardNumber, cvv,expirydate and amount as entities)
+ processpayment returns paymentreponse object(Success,TransactionId,ErrorMessage)
+Onsuccessful verification, it returns transcationid along with success value as true
+onfailed verfication, it returns error message  along with success value as false 
+#Url to Run API(when it runs in local)
+url to run the api is: https://localhost:44334/api/Payment , post request
+
+# Successful scenario test data
+Sample Data to above post call ,
+ payment request 
+{
+"CardNumber":1234567890123456,
+"ExpiryDate":"1/24" ,
+"Cvv" :"123", 
+"Amount":12.0 
+}
+
+Payment response:
+{
+    "Success": true,
+    "TransactionId": "66a85e20-302e-46bd-b7c4-01080f8893e4",
+    "ErrorMessage": null
+}
+
+#Failed scenario test data
+Sample Data to above post call(Month is wrong) ,
+ payment request 
+{
+"CardNumber":1234567890123456,
+"ExpiryDate":"15/24" ,
+"Cvv" :"123", 
+"Amount":12.0 
+}
+
+Payment reponse
+{
+    "Success": false,
+    "TransactionId": null,
+    "ErrorMessage": "Invalid payment request."
+}
