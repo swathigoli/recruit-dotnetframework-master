@@ -1,7 +1,7 @@
 ﻿using recruit_dotnetframework.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using recruit_dotnetframework.Service;
+ using System; 
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http; 
 using HttpPostAttribute = System.Web.Mvc.HttpPostAttribute;
@@ -14,7 +14,7 @@ namespace recruit_dotnetframework.Controllers
      public class PaymentController : ApiController
     {
         [HttpPost] 
-        public PaymentResponse ProcessPayment(PaymentRequest request)
+        public async Task<PaymentResponse> ProcessPayment(PaymentRequest request)
         {
             if (!IsCreditCardNumberValid(request.CardNumber))
             {
@@ -31,8 +31,13 @@ namespace recruit_dotnetframework.Controllers
                 return new PaymentResponse { Success = false, ErrorMessage = "Invalid payment request." };
             }
 
-            return new PaymentResponse { Success = true, TransactionId = GenerateTransactionId() };
-            
+
+            var response = await PaymentProcessService.ProcessPaymentAsync(request);
+            if(!string.IsNullOrEmpty(response)&& response == "Success")
+                return new PaymentResponse { Success = true, TransactionId = GenerateTransactionId() };
+
+            return new PaymentResponse { Success = false, ErrorMessage = "Invalid payment request." };
+
         }
 
 
@@ -75,6 +80,9 @@ namespace recruit_dotnetframework.Controllers
         { 
             return Guid.NewGuid().ToString();  
         }
+
+        
+
     }
    
 }
