@@ -49,6 +49,18 @@ Processpayment accept PaymentRequest as parameter(paymentrequest is class object
 
 processpayment returns paymentreponse object(Success,TransactionId,ErrorMessage)
 
+ Controller call stripe service class for transaction(PaymentProcessService)
+
+ Added dummy stripe key in webconfig
+ 
+ paymentprocessservice class has ProcessPaymentAsync method which accepts PaymentRequest class as parameter
+
+ payment process starts by creating paymentToken, on success it return tokenid
+ 
+ toekn id, passes to create customer  and charge the customer.
+
+ this method returns sucess message on successful payment process
+ 
 Onsuccessful verification, it returns transcationid along with success value as true
 
 onfailed verfication, it returns error message  along with success value as false 
