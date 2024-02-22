@@ -106,6 +106,7 @@ Payment reponse
     "TransactionId": null,
     "ErrorMessage": "Invalid payment request."
 }
+Image for failed scenario
+![image](https://github.com/swathigoli/recruit-dotnetframework-master/assets/40425447/2472582a-b843-4302-8d58-04317d4be75a)
 
-![image](https://github.com/swathigoli/recruit-dotnetframework/assets/40425447/3465fa23-ec8c-4a60-a6bc-afdfef5397d9)
 
